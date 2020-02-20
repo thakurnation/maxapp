@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Lightbox 			from 	'../Lightbox/Lightbox';
+
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 const mailChimpUrl = 'https://martinronquillo.us12.list-manage.com/subscribe/post?u=2bf47353b0ec1083d076f08af&id=c336a410cf';
 class Footer extends Component{

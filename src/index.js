@@ -6,9 +6,6 @@ import Header 		from 	'./components/Common/Header';
 import Sidebar 		from 	'./components/Common/Sidebar';
 import Footer 		from 	'./components/Common/Footer';
 import Home 		from 	'./components/Home/Home';
-import Home1 		from 	'./components/Home/Home1';
-import Blogs 		from 	'./components/Blogs/Blogs';
-import BlogDetail 	from 	'./components/Blogs/BlogDetail';
 import * as serviceWorker 	from 	'./serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
