@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getBlogBySlug, getBlogByCategory, getCategories } from '../../API/Blogs';
 
 var currentPath = window.location.pathname;	
 

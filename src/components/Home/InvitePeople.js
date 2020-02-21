@@ -32,18 +32,18 @@ export default class InvitePeople extends Component{
                     <h3>Invite new user</h3>
 
                     <div className="input">
-                        <label for="name">NAME</label>
+                        <label sfor="name">NAME</label>
                         <input type="name" name="name" id="name" placeholder="Enter your name" />
                     </div>
 
                     <div className="input">
-                        <label for="email">EMAIL</label>
+                        <label sfor="email">EMAIL</label>
                         <input type="email" name="email" id="email" placeholder="Enter your email" />
                     </div>
 
                     <div className="input">
-                        <label for="search">TEAM</label>
-                        <input className="mb-0" type="text" name="search" id="search" placeholder="Find team" autocomplete="off" />
+                        <label sfor="search">TEAM</label>
+                        <input className="mb-0" type="text" name="search" id="search" placeholder="Find team" aautocomplete="off" />
                         <div className="suggestion-container">
                             <div className="search-suggestion">
                                 <div className="search-suggestion-item d-flex flex-column align-items-start justify-content-center">

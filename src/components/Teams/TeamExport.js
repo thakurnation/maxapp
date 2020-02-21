@@ -31,10 +31,10 @@ export default class TeamExport extends Component{
 
                 <div className="input-container">
                     <div className="input">
-                    <label for="search">1. Select team</label>
+                    <label >1. Select team</label>
                         <i className="material-icons i-1">search</i>
                         <i className="material-icons i-2">check</i>
-                        <input className="mb-0" type="text" name="search" id="search" placeholder="Peter Schmith" autocomplete="off"/>
+                        <input className="mb-0" type="text" name="search" id="search" placeholder="Peter Schmith" />
                         <div className="suggestion-container">
                             <div className="search-suggestion">
                                 <div className="search-suggestion-item d-flex flex-column align-items-start justify-content-center">

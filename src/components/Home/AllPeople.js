@@ -43,7 +43,7 @@ export default class AllPeople extends Component{
                     </div>
                     <div className="select d-none d-md-block">
                         <select name="category" id="category">
-                            <option value="1" selected>All categories</option>
+                            <option value="1" >All categories</option>
                             <option value="2">All categories</option>
                             <option value="3">All categories</option>
                         </select>

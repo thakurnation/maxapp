@@ -32,14 +32,14 @@ class ManageTeam extends Component{
                 <div className="row no-gutters">
                     <div className="col-6">
                         <div className="team-name d-flex align-items-center justify-content-start text-truncate">
-                            <label className="mb-0" for="team-name ">Select team</label>
+                            <label className="mb-0" afor="team-name ">Select team</label>
                         <div className="d-none d-xl-block">
                             <a href="#" className="btn-custom-outline active">Software</a>
                             <a href="#" className="btn-custom-outline">Sales</a>
                             <a href="#" className="btn-custom-outline">Management</a>
                         </div>
                         <select className="d-block d-xl-none team-select" name="teams" id="teams">
-                            <option value="software" selected>Software</option>
+                            <option value="software" >Software</option>
                             <option value="software">Sales</option>
                             <option value="software">Management</option>
                         </select>
@@ -446,7 +446,7 @@ class ManageTeam extends Component{
 
                     <div className="col-6">
                         <div className="category d-flex align-items-center justify-content-start">
-                            <label className="mb-0" for="category">Category</label>
+                            <label className="mb-0" sfor="category">Category</label>
                             <div className="category-input">
                                 <input type="text" placeholder="Software" />
                                 <i className="material-icons">done</i>
@@ -679,7 +679,7 @@ class ManageTeam extends Component{
                                 <div className="radio-input-container div d-flex align-items-center mb-4">
                                    <div className="radio-checkbox">
                                        <input type="checkbox" name="checkbox-one" id="checkbox-one"/>
-                                        <label for="checkbox-one">
+                                        <label afor="checkbox-one">
                                             <span></span>
                                         </label>
                                    </div>
@@ -689,7 +689,7 @@ class ManageTeam extends Component{
                                 <div className="radio-input-container div d-flex align-items-center">
                                     <div className="radio-checkbox">
                                         <input type="checkbox" name="checkbox-one" id="checkbox-two" />
-                                         <label for="checkbox-two">
+                                         <label afor="checkbox-two">
                                              <span></span>
                                          </label>
                                     </div>

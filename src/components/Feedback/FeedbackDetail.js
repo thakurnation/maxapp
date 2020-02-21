@@ -44,19 +44,19 @@ class FeedbackDetail extends Component{
 
                             <div className="stars">
                                 <input type="radio" name="star" id="star1" />
-                                <label for="star1"></label>
+                                <label sfor="star1"></label>
 
                                 <input type="radio" name="star" id="star2"/>
-                                <label for="star2"></label>
+                                <label sfor="star2"></label>
 
                                 <input type="radio" name="star" id="star3"/>
-                                <label for="star3"></label>
+                                <label sfor="star3"></label>
 
                                 <input type="radio" name="star" id="star4"/>
-                                <label for="star4"></label>
+                                <label sfor="star4"></label>
 
                                 <input type="radio" name="star" id="star5"/>
-                                <label for="star5"></label>
+                                <label sfor="star5"></label>
                             </div>
 
                         </div>
