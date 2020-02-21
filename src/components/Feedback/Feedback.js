@@ -42,7 +42,7 @@ class Feedback extends Component{
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             <p className="name m-0 flex-fill">Just to a single person</p>
-                            <div className="text-right"><a href="../give-feedback-to-one-user/index.html" className="btn-custom btn-custom-outline text-center">Start</a></div>
+                            <div className="text-right"><a href="FeedbackSingle" className="btn-custom btn-custom-outline text-center">Start</a></div>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             <p className="name m-0 flex-fill">Change previously given feedback</p>

@@ -7,9 +7,10 @@ import Sidebar 				from 	'./components/Common/Sidebar';
 import Footer 				from 	'./components/Common/Footer';
 import Home 				from 	'./components/Home/Home';
 import ManagePeople 		from 	'./components/Home/ManagePeople';
-import AllPeople 		from 	'./components/Home/AllPeople';
+import AllPeople 			from 	'./components/Home/AllPeople';
 import PeopleExport 		from 	'./components/Home/PeopleExport';
 import InvitePeople 		from 	'./components/Home/InvitePeople';
+import PeopleProfile 		from 	'./components/Home/PeopleProfile';
 
 
 import ManageTeam 			from 	'./components/Teams/ManageTeam';
@@ -18,6 +19,7 @@ import AllTeam 				from 	'./components/Teams/AllTeam';
 import TeamExport 			from 	'./components/Teams/TeamExport';
 
 import Feedback 			from 	'./components/Feedback/Feedback';
+import FeedbackSingle 		from 	'./components/Feedback/FeedbackSingle';
 import FeedbackDetail 		from 	'./components/Feedback/FeedbackDetail';
 
 import * as serviceWorker 	from 	'./serviceWorker';
@@ -32,6 +34,7 @@ const routing = (
       <Route exact path="/login" 			component={login} />
       <Route exact path="/AllPeople" 		component={AllPeople} />
       <Route exact path="/InvitePeople" 	component={InvitePeople} />
+      <Route exact path="/PeopleProfile" 	component={PeopleProfile} />
       <Route exact path="/ManagePeople" 	component={ManagePeople} />
       <Route exact path="/PeopleExport" 	component={PeopleExport} />
       <Route exact path="/ManageTeam" 		component={ManageTeam} />
@@ -39,6 +42,7 @@ const routing = (
       <Route exact path="/AllTeam" 			component={AllTeam} />
       <Route exact path="/TeamExport" 		component={TeamExport} />
       <Route exact path="/Feedback" 		component={Feedback} />
+      <Route exact path="/FeedbackSingle" 	component={FeedbackSingle} />
       <Route exact path="/FeedbackDetail" 	component={FeedbackDetail} />
   </Router>
 )

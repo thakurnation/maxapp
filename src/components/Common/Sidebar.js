@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { getBlogBySlug, getBlogByCategory, getCategories } from '../../API/Blogs';
 
-var currentPath = '';
-if(process.browser){
-	currentPath = window.location.pathname;	
-}
+var currentPath = window.location.pathname;	
+
 
 class Sidebar extends Component{
 	constructor(props) {
@@ -47,20 +45,20 @@ class Sidebar extends Component{
         <div className="sidebar-group">
             <h3>TEAMS</h3>
             <ul className="list-unstyled">
-                <li><a href="MyTeam">Results </a></li>
-                <li><a href="TeamExport">Export results </a></li>
-                <li><a href="ManageTeam">Manage teams </a></li>
-                <li><a href="#">Create a new team </a></li>
+                <li className={ currentPath == '/MyTeam' || currentPath == '/AllTeam'?'active':'' }><a href="MyTeam">Results </a></li>
+                <li className={ currentPath == '/TeamExport'?'active':'' }><a href="TeamExport">Export results </a></li>
+                <li className={ currentPath == '/ManageTeam'?'active':'' }><a href="ManageTeam">Manage teams </a></li>
+                <li ><a href="#">Create a new team </a></li>
             </ul>
         </div>
 
         <div className="sidebar-group">
             <h3>PEOPLE</h3>
             <ul className="list-unstyled">
-                <li className="active"><a href="/">Results </a></li>
-                <li><a href="PeopleExport">Export results </a></li>
-                <li><a href="ManagePeople">Manage people</a></li>
-                <li><a href="InvitePeople">Invite new people </a></li>
+                <li className={ currentPath == '/' || currentPath == '/AllPeople' ?'active':'' }><a href="/">Results </a></li>
+                <li className={ currentPath == '/PeopleExport'?'active':'' }><a href="PeopleExport">Export results </a></li>
+                <li className={ currentPath == '/ManagePeople'?'active':'' }><a href="ManagePeople">Manage people</a></li>
+                <li className={ currentPath == '/InvitePeople'?'active':'' }><a href="InvitePeople">Invite new people </a></li>
             </ul>
         </div>
 

@@ -65,7 +65,7 @@ class Home extends Component{
                             <img class="rounded-circle" src="../../../assets/img/p-04.png" alt="#"/>
                             <p class="name m-0 flex-fill">Jesse Gregory</p>
                             <p class="prof m-0 text-start d-none d-xl-block">Junior Javascript Developer</p>
-                            <div class="d-flex align-items-center"><a class="mr-1 active-link" href="../people-results-one-user/index.html"><p class="">Open profile</p><p class="">in full screen</p></a></div>
+                            <div class="d-flex align-items-center"><a class="mr-1 active-link" href="PeopleProfile"><p class="">Open profile</p><p class="">in full screen</p></a></div>
                         </li>
                         <li class="list-group-item d-flex align-items-center">
                             <img class="rounded-circle" src="../../../assets/img/p-05.png" alt="#"/>

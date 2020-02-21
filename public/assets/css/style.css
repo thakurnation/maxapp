@@ -534,7 +534,6 @@ body {
 
 .give-feedback-to-one-user {
   position: relative;
-  width: 100%;
   margin-left: 24.4rem;
   padding: 0 4.6rem 2.8rem 3.4rem; }
   .give-feedback-to-one-user-header {
@@ -743,7 +742,6 @@ body {
 
 .people-export {
   position: relative;
-  width: 100%;
   margin-left: 24.4rem;
   padding: 0 4.6rem 2.8rem 3.4rem; }
   .people-export-header {
@@ -898,7 +896,6 @@ body {
 
 .people-invite {
 
-  width: 100%;
   margin-left: 24.4rem;
   background-color: #f8f9fb;
   padding: 4.1rem 4.6rem 2.8rem 3.4rem;
@@ -1527,7 +1524,6 @@ body {
 
 .people-results-one-user {
   margin-left: 24.4rem;
-  width: 100% !important;
   height: 100vh;
   padding: 0 4.6rem 0 3.4rem; }
   .people-results-one-user-header {
@@ -1946,7 +1942,6 @@ body {
 
 .teams-export {
   position: relative;
-  width: 100%;
   margin-left: 24.4rem;
   padding: 0 4.6rem 2.8rem 3.4rem; }
   .teams-export-header {

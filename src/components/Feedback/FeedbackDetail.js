@@ -19,7 +19,7 @@ class FeedbackDetail extends Component{
 			 <div className="give-feedback-to-all-people">
             <div className="give-feedback-to-all-people-header">
                 <div className="give-feedback-to-all-people-header-logout d-flex justify-content-between">
-                    <p className="subtitle back mb-0 d-flex align-items-center"><i className="material-icons">keyboard_arrow_left</i> <a href="#">Back</a></p>
+                    <p className="subtitle back mb-0 d-flex align-items-center"><i className="material-icons">keyboard_arrow_left</i> <a href="Feedback">Back</a></p>
                     <p className="text-right align-middle"><a href="../people-signin/index.html">Logout</a> <i className="material-icons align-middle">exit_to_app</i></p>
                 </div>
                 <h2 className="mt-1 align-middle">Give feedback</h2>
