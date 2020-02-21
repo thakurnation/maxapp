@@ -1,12 +1,18 @@
 import React, { Component  } from 'react';
 import { Button, ButtonToolbar, Modal, Carousel } from 'react-bootstrap';
-
+import Header from '../Common/Header';
+import Constants from '../../constants/Constants';
 
 class ManageTeam extends Component{
 	
 	constructor(props) {
 		super(props);
 		this.state = {
+			selectedTeam:	'software',
+			Teams		:	Constants.Teams,
+			TeamMembers	:	Constants.TeamMembers,
+			TeamLeads	:	Constants.TeamLeads,
+			AdminRights	:	Constants.AdminRights,
 		};
 	}
 	
@@ -17,32 +23,28 @@ class ManageTeam extends Component{
    render(){
       return(
 		<div className="teams-settings">
-            <div className="teams-settings-header">
-                <div className="teams-settings-header-logout d-flex justify-content-between">
-                    <p className="subtitle back mb-0 d-flex align-items-center"><a href="#">Teams</a></p>
-                    <p className="text-right align-middle"><a href="#">Logout</a> <i className="material-icons align-middle">exit_to_app</i></p>
-                </div>
-                <h2 className="mt-1 align-middle">Manage teams</h2>
-            </div>
             
+            <Header Title='Manage teams' breadCrumb="Team" />
             <div className="teams-settings-body">
-
-                
-
                 <div className="row no-gutters">
                     <div className="col-6">
                         <div className="team-name d-flex align-items-center justify-content-start text-truncate">
                             <label className="mb-0" afor="team-name ">Select team</label>
                         <div className="d-none d-xl-block">
-                            <a href="#" className="btn-custom-outline active">Software</a>
-                            <a href="#" className="btn-custom-outline">Sales</a>
-                            <a href="#" className="btn-custom-outline">Management</a>
+						
+						{ 	this.state.Teams.map(( item, key ) =>
+							(
+							 <a href="javascript:void(0);" className={ 'btn-custom-outline '+(this.state.selectedTeam ==item.value ?'active' : null)	 } onClick={()=> this.setState({ selectedTeam : item.value }) }>{ item.name }</a>
+							))
+						}
+                           
+                         
                         </div>
-                        <select className="d-block d-xl-none team-select" name="teams" id="teams">
+                        {/*<select className="d-block d-xl-none team-select" name="teams" id="teams">
                             <option value="software" >Software</option>
                             <option value="software">Sales</option>
                             <option value="software">Management</option>
-                        </select>
+                        </select>*/}
                         </div>
                        
                         <div className="team-card bg-white team-card-member">
@@ -55,389 +57,18 @@ class ManageTeam extends Component{
                             <div className="team-table team-table-member">
                                 <table className="table">
                                     <tbody>
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
+									{ 	this.state.TeamMembers.map(( item, key ) =>
+											(<tr key={key}>
+												<td className="spacer"></td>
+												<td>{item.name}</td>
+												<td className="d-none d-lg-table-cell">{item.position}</td>
+												<td>
+													<a href="#">Delete</a>
+												</td>
+											</tr>)
+										) 
+									}
                                         
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -463,40 +94,17 @@ class ManageTeam extends Component{
                             <div className="team-table team-table-lead">
                                 <table className="table">
                                     <tbody>
-                                        <tr>
+									{ 	this.state.TeamLeads.map(( item, key ) =>
+										(<tr key={key}>
                                             <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell" className="d-none d-lg-table-cell">Database Engeneer</td>
+                                           <td>{item.name}</td>
+                                            <td className="d-none d-lg-table-cell" className="d-none d-lg-table-cell">{item.position}</td>
                                             <td>
                                                 <a href="#">Delete</a>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell" className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell" className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-lg-table-cell" className="d-none d-lg-table-cell">Database Engeneer</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
+										  </tr>)
+										) 
+									}
                                     </tbody>
                                 </table>
                             </div>
@@ -513,155 +121,22 @@ class ManageTeam extends Component{
                             <div className="team-table team-table-admin">
                                 <table className="table">
                                     <tbody>
-                                        <tr>
+									
+									{ 	this.state.AdminRights.map(( item, key ) =>
+										(<tr key={key}>
                                             <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
+											<td>{item.name}</td>
+                                            <td className="d-none d-xl-table-cell">{item.position}</td>
+                                            <td className="d-none d-md-table-cell">{item.Right}</td>
                                             <td>
                                                 <a href="#">Delete</a>
                                             </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">CEO</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>Franz Liebknecht</td>
-                                            <td className="d-none d-xl-table-cell">Lawyer</td>
-                                            <td className="d-none d-md-table-cell">View only</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>John Walter</td>
-                                            <td className="d-none d-xl-table-cell">Database engeneer</td>
-                                            <td className="d-none d-md-table-cell">Admin rights</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td className="spacer"></td>
-                                            <td>Franz Liebknecht</td>
-                                            <td className="d-none d-xl-table-cell">Lawyer</td>
-                                            <td className="d-none d-md-table-cell">View only</td>
-                                            <td>
-                                                <a href="#">Delete</a>
-                                            </td>
-                                        </tr>
+										  </tr>)
+										) 
+									}
+									
+                                    
+                                      
                                     </tbody>
                                 </table>
                             </div>
